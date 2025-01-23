@@ -1,5 +1,5 @@
 import {configureStore} from "@reduxjs/toolkit";
-import { userReducer,myPostReducer,postOfFollowingReducer, allUsersReducer, userProfile, userProfileReducer, userPostReducer } from "./Reducers/user";
+import { userReducer,myPostReducer,postOfFollowingReducer, allUsersReducer, userProfileReducer, userPostReducer } from "./Reducers/user";
 import {PostActionReducer } from "./Reducers/post";
 // import { userReducer } from "./Reducers/user";
 
