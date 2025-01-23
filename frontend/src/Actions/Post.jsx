@@ -1,4 +1,4 @@
-import axios from "axios";
+import axiosInstance from "../axiosConfig";
 
 export const likePost=(id)=>async(dispatch)=>{
     try {
@@ -7,7 +7,7 @@ export const likePost=(id)=>async(dispatch)=>{
             type:"likeRequest"
         })
         
-        const {data}=await axios.get(`/api/v1/post/${id}`);
+        const {data}=await axiosInstance.get(`/api/v1/post/${id}`);
         dispatch({
             type:"likeSuccess",
             payload:data.message,
@@ -27,7 +27,7 @@ export const addComment=(id,comment)=>async(dispatch)=>{
             type:"commentRequest"
         })
         
-        const {data}=await axios.put(`/api/v1/post/comment/${id}`,{
+        const {data}=await axiosInstance.put(`/api/v1/post/comment/${id}`,{
          comment
         },{
             headers:{"Content-Type":"application/json"},
@@ -51,7 +51,7 @@ export const deleteComment=(postId,commentId)=>async(dispatch)=>{
             type:"DeleteCommentRequest"
         })
         
-        const {data}=await axios.delete(`/api/v1/post/comment/${postId}`,{
+        const {data}=await axiosInstance.delete(`/api/v1/post/comment/${postId}`,{
             
             headers:{"Content-Type":"application/json"},
             data:{CommentId:commentId},
@@ -75,7 +75,7 @@ export const addNewPost=(caption,image)=>async(dispatch)=>{
             type:"newPostRequest"
         })
         
-        const {data}=await axios.post("/api/v1/post/upload",{
+        const {data}=await axiosInstance.post("/api/v1/post/upload",{
             caption,
             image
         },{
@@ -100,7 +100,7 @@ export const deletePost=(id)=>async(dispatch)=>{
             type:"DeletePostRequest"
         })
         
-        const {data}=await axios.delete(`/api/v1/post/${id}`);
+        const {data}=await axiosInstance.delete(`/api/v1/post/${id}`);
         dispatch({
             type:"DeletePostSuccess",
             payload:data.message,
@@ -120,7 +120,7 @@ export const updatePost=(id,caption)=>async(dispatch)=>{
             type:"UpdatePostRequest"
         })
         
-        const {data}=await axios.put(`/api/v1/post/${id}`,{
+        const {data}=await axiosInstance.put(`/api/v1/post/${id}`,{
             caption
         },{
             headers:{"Content-Type":"application/json"},

@@ -3,8 +3,15 @@ import dotenv from "dotenv";
 import post from "./routers/post.js";
 import user from "./routers/user.js";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 const app = express();
+
+app.use(cors({
+    origin:"http://localhost:3000",
+    credentials:true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
+}));
 
 dotenv.config(
     {path: './config/config.env'});
