@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 // Load environment variables from the .env file
 dotenv.config();
 
+
 const connectDatabase = () => {
   const dbUrl = process.env.DATABASE_URL;
 
@@ -13,10 +14,7 @@ const connectDatabase = () => {
   }
 
   mongoose
-    .connect(dbUrl, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
+    .connect(dbUrl)
     .then(() => console.log("Database connected successfully!"))
     .catch((err) => {
       console.error("Database connection error:", err.message);
