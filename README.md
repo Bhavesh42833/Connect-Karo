@@ -1,7 +1,5 @@
 # 🔗 Connect Karo
 
-![Connect Karo](image.png)
-
 **Connect Karo** is a full-stack social media application built with **React**, **Node.js**, **Express.js**, and **MongoDB**. It enables users to create, connect, and share with features such as profile management, posts with images, interactive comments, likes, and much more.
 
 ---
